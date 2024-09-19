@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: row;">
+
+        <div style="width: 50%; height: 1000px;">
+
+            <input placeholder="Digite o número a converter" id="input_numeral"> Base: 
+            <select  id="input_base_numero">
+                <option value="2">2</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+            </select><br>
+            Para a base: 
+            <select  id="select_base">
+                <option value="2">2</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+            </select><br>
+            
+            <button onclick="conversaoBase()">
+                Converter
+            </button><br><br>
+            <div id="resposta"></div>
+        </div>
+
+        <div style="width: 50%; height: 1000px;">
+            <input type="text" id="input_primeiro_numero" placeholder="Digite o primeiro número">
+            <select  id="select_base_primeiro_numero">
+                <option value="2">2</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+            </select>
+            
+            <select  id="select_operador">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">x</option>
+                <option value="/">/</option>
+            </select>
+
+            <input type="text" id="input_segundo_numero" placeholder="Digite o segundo número">
+            <select  id="select_base_segundo_numero">
+                <option value="2">2</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+            </select>
+            <button onclick="operacaoBase()">Calcular</button><br><br>
+
+            <div id="resposta_operacao"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="../sistema_conversao/JS/index.js"></script>
