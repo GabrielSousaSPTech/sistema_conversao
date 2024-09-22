@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor e Calculadora de Bases</title>
+    <style>
+        /*USANDO A TAG TODO O ELEMENTO FICA DESSA MANEIRA*/
+        body{
+            margin: 0;
+            font-family: 'lucidada console';
+            background-size: cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            background-color: rgb(199, 145, 75);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .corpo{
+            width: 80%;
+            max-width: 900px;
+            padding: 20px; /*TAMANHO DA BORDA*/
+            border-radius: 30px; /*BORDA ARREDONDADA*/
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            background-size: cover; /*Deixa a imagem no ajuste correto*/
+            
+        }
+        .blurParaImagem{
+            width: 100%;
+            height: 100%; /* ajusta a altura automaticamente */
+            filter: blur(10px); 
+            position: absolute; /* deixa a img no fundo da div, como se ela fosse ficar do atrás dos inputs*/
+            top: 0;
+            left: 0;
+            z-index: -1; /* não entendi, mas faz ficar no fundo */
+            border-radius: 30px; 
+
+        }
+
+        .coluna{
+            width: 45%;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            box-sizing: border-box; /*DEIXA TUDO IGUAL*/
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #dbd144;
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover{
+            background-color: #4A00E0; /* MELHOR TAGGGGG, muda quando coloca o mouse em cima*/
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+        }
+
+        #resposta, #resposta_operacao {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="corpo">
+        <img class="blurParaImagem"src="https://lifestylebrazil.com.br/wp-content/uploads/2024/05/fusion-of-symbols-a-la-basquiat-1160x649.jpg" >
+        <div class="coluna">
+            <h2>Conversão de Bases</h2>
+            <input placeholder="Digite o número a converter" id="input_numeral">
+            <label for="input_base_numero">Base:</label>
+            <select id="input_base_numero">
+                <option value="2">2</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+            </select>
+            <label for="select_base">Para a base:</label>
+            <select id="select_base">
+                <option value="2">2</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+            </select>
+            <button onclick="conversaoBase()">Converter</button>
+            <div id="resposta"></div>
+        </div>
+
+        <div class="coluna">
+            <h2>Operações</h2>
+            <input type="text" id="input_primeiro_numero" placeholder="Digite o primeiro número">
+            <select id="select_base_primeiro_numero">
+                <option value="2">2</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+            </select>
+
+            <select id="select_operador">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">x</option>
+                <option value="/">/</option>
+            </select>
+
+            <input type="text" id="input_segundo_numero" placeholder="Digite o segundo número">
+            <select id="select_base_segundo_numero">
+                <option value="2">2</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+            </select>
+            <button onclick="operacaoBase()">Calcular</button>
+            <div id="resposta_operacao"></div>
+        </div>
+    </div>
+
+    <script src="../sistema_conversao/JS/index.js"></script>
+</body>
+</html>
